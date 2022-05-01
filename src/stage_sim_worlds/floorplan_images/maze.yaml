@@ -1,0 +1,6 @@
+image: maze.jpg
+resolution: 0.1
+origin: [-46,-46,0]
+occupied_thresh: 0.9
+free_thresh: 0.1
+negate: 0

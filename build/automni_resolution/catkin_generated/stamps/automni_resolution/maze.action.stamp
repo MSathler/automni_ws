@@ -1,0 +1,9 @@
+#goal definition
+str technique
+---
+#result definition
+str result
+---
+#feedback
+float32 odom
+str collision

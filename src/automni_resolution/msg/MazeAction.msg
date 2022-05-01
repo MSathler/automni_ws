@@ -1,0 +1,3 @@
+MazeActionGoal action_goal
+MazeActionResult action_result
+MazeActionFeedback action_feedback

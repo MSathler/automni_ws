@@ -1,0 +1,31 @@
+
+(cl:in-package :asdf)
+
+(defsystem "automni_resolution-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :actionlib_msgs-msg
+               :std_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "mazeAction" :depends-on ("_package_mazeAction"))
+    (:file "_package_mazeAction" :depends-on ("_package"))
+    (:file "mazeActionAction" :depends-on ("_package_mazeActionAction"))
+    (:file "_package_mazeActionAction" :depends-on ("_package"))
+    (:file "mazeActionActionFeedback" :depends-on ("_package_mazeActionActionFeedback"))
+    (:file "_package_mazeActionActionFeedback" :depends-on ("_package"))
+    (:file "mazeActionActionGoal" :depends-on ("_package_mazeActionActionGoal"))
+    (:file "_package_mazeActionActionGoal" :depends-on ("_package"))
+    (:file "mazeActionActionResult" :depends-on ("_package_mazeActionActionResult"))
+    (:file "_package_mazeActionActionResult" :depends-on ("_package"))
+    (:file "mazeActionFeedback" :depends-on ("_package_mazeActionFeedback"))
+    (:file "_package_mazeActionFeedback" :depends-on ("_package"))
+    (:file "mazeActionGoal" :depends-on ("_package_mazeActionGoal"))
+    (:file "_package_mazeActionGoal" :depends-on ("_package"))
+    (:file "mazeActionResult" :depends-on ("_package_mazeActionResult"))
+    (:file "_package_mazeActionResult" :depends-on ("_package"))
+    (:file "mazeFeedback" :depends-on ("_package_mazeFeedback"))
+    (:file "_package_mazeFeedback" :depends-on ("_package"))
+    (:file "mazeGoal" :depends-on ("_package_mazeGoal"))
+    (:file "_package_mazeGoal" :depends-on ("_package"))
+    (:file "mazeResult" :depends-on ("_package_mazeResult"))
+    (:file "_package_mazeResult" :depends-on ("_package"))
+  ))

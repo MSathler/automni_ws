@@ -1,0 +1,8 @@
+prefix=/home/itv/automni_ws/install
+
+Name: automni_resolution
+Description: Description of automni_resolution
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lautomni_resolution
+Requires: actionlib_msgs message_generation roscpp rospy std_msgs

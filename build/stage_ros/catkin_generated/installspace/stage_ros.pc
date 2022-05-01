@@ -1,0 +1,8 @@
+prefix=/home/itv/automni_ws/install
+
+Name: stage_ros
+Description: Description of stage_ros
+Version: 1.8.0
+Cflags: -I${prefix}/include -I/usr/include -I/opt/ros/noetic/include/Stage-4.3 -I/usr/lib/fltk
+Libs: -L${prefix}/lib /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0 /opt/ros/noetic/lib/cmake/Stage/../../../lib/libstage.so.4.3.0 -lfltk_images -lfltk_forms -lfltk_gl /usr/lib/x86_64-linux-gnu/libGL.so -lfltk /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libm.so
+Requires: geometry_msgs nav_msgs roscpp sensor_msgs std_msgs std_srvs tf message_runtime

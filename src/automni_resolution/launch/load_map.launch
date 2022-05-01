@@ -1,0 +1,33 @@
+
+<launch>
+    <param name="use_sim_time" value="true" />
+    <node pkg="stage_ros" type="stageros" name="stage_ros" respawn="false" args="$(find stage_sim_worlds)/worlds/practical_exam.world" >
+        <param name="laser_scan_topic" value="/base_scan"/>
+        <param name="laser_frame_id" value="base_laser_link" />
+        <param name="odom_topic" value="/odom"/>
+        <param name="odom_frame_id" value="odom" />    
+        <param name="disable_odometry" value="false" />    
+    </node>
+
+    <!--### URDF MODEL ###-->
+    <param name="robot_description" textfile="$(find automni_resolution)/launch/navigation/giraff.urdf" />
+    <param name="use_gui" value="False"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+
+<!--### NAVIGATION ###-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find stage_sim_worlds)/map/map5.yaml">
+      <param name="frame_id" value="map"/>
+    </node>  
+    <include file="$(find automni_resolution)/launch/navigation/move_base_m.launch" />  
+
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization">	    
+        <param name="odom_frame_id" value="odom"/>
+        <param name="global_frame_id" value="map"/>
+        <param name="base_frame_id" value="base_link"/>
+    </node>
+
+    <node name="rviz_player" pkg="rviz" type="rviz" args="-d $(find automni_resolution)/res.rviz"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="od_broadcaster" args="0.0 0.0 0.0 0 0 0 map odom"/>
+
+</launch>

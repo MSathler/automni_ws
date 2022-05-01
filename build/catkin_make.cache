@@ -1,0 +1,2 @@
+automni_resolution:stage_ros:stage_sim_worlds
+-DCATKIN_DEVEL_PREFIX=/home/itv/automni_ws/devel -DCMAKE_INSTALL_PREFIX=/home/itv/automni_ws/install -G Unix Makefiles
